@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Clone - {% block title %} {% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/youtube-icon.ico') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  {% block style %} {% endblock %}
+</head>
+<body>
+  <div class="master-header">
+    <div class="master-header-grid">
+      <div class="home"><a href="/"><img src="{{ url_for('static', filename='img/youtube-logo.png') }}" alt=""></a></div>
+      <div class="search">
+        <input class="search" type="text" name="" id="">
+        <input type="submit" value="🔎︎">
+      </div>
+      <div class="portfolio"><a href="https://github.com/bissakov/"><img src="{{ url_for('static', filename='img/github-logo.png') }}" alt=""></a></div>
+    </div>
+    <div class="bar-container">
+      <div class="bar"></div>
+    </div>
+  </div>
+  {% block content %} {% endblock %}
+
+  <div class="up-left"><div>⮝</div></div>
+  <div class="up-right"><div>⮝</div></div>
+
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script></body>
+</html>

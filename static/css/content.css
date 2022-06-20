@@ -1,0 +1,98 @@
+.container {
+    margin: 1% 10% 0% 10%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1459px) { .container { grid-template-columns: auto auto auto auto auto; } }
+@media screen and (max-width: 1015px) { .container { grid-template-columns: auto auto auto auto; } }
+@media screen and (max-width: 698px)  { .container { grid-template-columns: auto auto auto; } }
+
+.item { margin: 2.6% 3.5% 2.6% 3.5%; }
+
+/* thumbnail */
+
+.thumbnail-container {
+    position: relative;
+    margin-bottom: 3.5%;
+}
+
+.thumbnail {
+    position: relative;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+.thumbnail-container > img {
+    border-radius: 7.5px;
+}
+
+/* ratio */
+
+.ratio {
+    position: absolute;
+    float: left;
+    left: 3%;
+    top: 3%;
+    z-index: 1;
+    height: .8rem;
+    width: .8rem;
+    border-radius: 50%;
+    border: .15rem #000000 solid;
+}
+
+.high       { background-color: rgb(0, 255, 0); }
+.upper-mid  { background-color: rgb(127, 255, 0); }
+.mid        { background-color: rgb(255, 255, 0); }
+.lower-mid  { background-color: rgb(255, 127, 0); }
+.low        { background-color: rgb(255, 0, 0); }
+
+.ratio-tooltip {
+    width: 5rem;
+    font-weight: bold;
+    color: rgb(228, 228, 228);
+    text-align: center;
+    padding: .5rem 0;
+}
+
+/* duration */
+
+.duration {
+    position: absolute;
+    right: .4rem;
+    bottom: .5rem;
+    background-color: rgba(37, 37, 37, 0.8);
+    font-weight: bold;
+    font-size: .9rem;
+    letter-spacing: .025rem;
+    z-index: 1;
+    padding: 1% 2% 1% 2%;
+    border-radius: 5px;
+}
+
+/* other */
+
+a, a:hover { text-decoration: none !important; }
+
+.video, .video:hover { color: #ffffff; }
+
+.title { font-weight: 500; line-height: 1.5rem; }
+
+.channel, .info {
+    font-size: .8rem;
+    font-weight: 400;
+    color: #aaaaa4;
+}
+
+.channel:hover { color: #f8ffff; }
+
+.title, .channel, .info {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.info {
+    display: inline;
+}

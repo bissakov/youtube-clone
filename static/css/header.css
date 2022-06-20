@@ -1,0 +1,85 @@
+/* header */
+
+.header { margin: 1% 10% .8% 10%; }
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.header-grid > * {
+    color: #ffffff;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 1.1rem;
+}
+
+.label { text-align: left; }
+
+.sort {
+    text-align: right;
+    user-select: none;
+}
+
+#sort-btn:checked ~ label {
+    background-color: #4b4b4b;
+    transition: background-color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#sort-btn { visibility: hidden; }
+
+.sort > label {
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 1% 1.5% 1% 1.5%;
+    -moz-border-radius: .6rem;
+    -webkit-border-radius: .6rem;
+    border-radius: .6rem;
+    background-color: #0f0f0f;
+    transition: background-color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sort > label:hover { background-color: #646464; }
+
+.hidden {
+    z-index: -1;
+    opacity: 0%;
+    -webkit-transition: opacity 0.56s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.56s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visible {
+    z-index: 3;
+    opacity: 100%;
+    -webkit-transition: opacity 0.56s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.56s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sort-menu {
+    position: absolute;
+    width: 12%;
+    right: 10.4%;
+    top: 15.5%;
+    background-color: #202020;
+}
+
+.sort-item {
+    margin: 4% 4% 4% 4%;
+    padding: 4% 7.5% 4% 7.5%;
+    cursor: pointer;
+    font-weight: normal;
+    color: #ffffff;
+    -moz-border-radius: .6rem;
+    -webkit-border-radius: .6rem;
+    border-radius: .6rem;
+}
+
+.sort-item:hover {
+    background-color: #4b4b4b;
+}
+
+.selected, .selected:hover {
+    background-color: #636363;
+    transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}

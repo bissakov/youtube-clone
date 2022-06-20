@@ -1,0 +1,135 @@
+.container {
+    margin: 1% 25% 0% 25%;
+    display: grid;
+    grid-template-columns: auto;
+    color: #ffffff;
+    background-color: #0f0f0f;
+}
+
+hr {
+    width: 93%;
+    height: 2px;
+    border: none;
+    background-color: #4b4b4b;
+}
+
+.item:hover {
+    background-color: #272727;
+}
+
+.channel-name { grid-area: channel-name; }
+.video { grid-area: thumbnail; }
+.misc-info { grid-area: info; }
+
+.item {
+    margin: 1% 0%;
+    padding: 2% 3.5% 2% 3.5%;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-areas:
+        'channel-name channel-name'
+        'thumbnail info';
+    column-gap: 1.5%;
+}
+
+.channel-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .03rem;
+    margin: 0% 0% 1% 0%;
+}
+
+.channel-name > img {
+    margin-right: .5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px #ffffff solid;
+    vertical-align: middle;
+}
+
+.video {
+    margin: 1% 0% 0% 0%; 
+}
+
+.thumbnail-container {
+    white-space: nowraps;
+    display: inline;
+}
+
+.thumbnail {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    object-fit:inherit;
+    border-radius: 7.5px;
+}
+
+/* ratio */
+
+.ratio {
+    position: absolute;
+    float: left;
+    left: 3%;
+    top: 3%;
+    z-index: 1;
+    height: .8rem;
+    width: .8rem;
+    border-radius: 50%;
+    border: .15rem #000000 solid;
+}
+
+.high       { background-color: rgb(0, 255, 0); }
+.upper-mid  { background-color: rgb(127, 255, 0); }
+.mid        { background-color: rgb(255, 255, 0); }
+.lower-mid  { background-color: rgb(255, 127, 0); }
+.low        { background-color: rgb(255, 0, 0); }
+
+.ratio-tooltip {
+    width: 5rem;
+    font-weight: bold;
+    color: rgb(228, 228, 228);
+    text-align: center;
+    padding: .5rem 0;
+}
+
+/* duration */
+
+.duration {
+    position: absolute;
+    right: .4rem;
+    bottom: .5rem;
+    background-color: rgba(37, 37, 37, 0.8);
+    font-weight: bold;
+    font-size: .9rem;
+    letter-spacing: .025rem;
+    z-index: 1;
+    padding: 1% 2% 1% 2%;
+    border-radius: 5px;
+}
+
+/* other */
+
+a, a:hover { text-decoration: none !important; }
+
+.video, .video:hover { color: #ffffff; }
+
+.title { font-weight: 500; line-height: 1.5rem; }
+
+.channel, .info {
+    font-size: .8rem;
+    font-weight: 400;
+    color: #aaaaa4;
+}
+
+.channel:hover { color: #f8ffff; }
+
+.title, .channel, .info {
+    margin-top: .5%;
+    margin-bottom: .5%;
+}
+
+.info {
+    display: inline;
+}

@@ -1,0 +1,9 @@
+Flask
+Flask-RESTful
+flask-cors
+flask_paginate
+google-api-python-client
+google-auth-oauthlib
+tqdm
+Pillow
+isodate

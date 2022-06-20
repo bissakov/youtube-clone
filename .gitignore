@@ -1,7 +1,10 @@
-.env
-*.pyc
 myvenv/
 __pycache__/
+static/img/original/
+static/img/cropped/
+static/img/youtube-logo2.png
+*.pyc
+.env
 backup1.json
 backup2.json
 playlist_items.json

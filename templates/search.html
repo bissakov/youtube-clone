@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Search {% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% for item in data[:24] %}
+  <div class="item">
+    <div class="channel-name">
+      <a href="https://www.youtube.com/c/{{ item['channelName'] }}" class="channel-name">
+        <img src="static/img/channel/{{ item['channelId'] }}.jpg" alt=""><span>{{ item['channelName'] }}</span>
+      </a>
+    </div>
+    <a href="https://youtu.be/{{ item['videoId'] }}" class="video">
+      <div class="thumbnail-container">
+        <!-- <div class="ratio"><div class="ratio-tooltip" title="{{ item['ratio'] * 100 }}%"></div></div> -->
+        <!-- <div class="duration">{{ item['duration'] }}</div> -->
+        <img src="static/img/small/{{ item['videoId'] }}.jpg" alt="" class="thumbnail">
+      </div>
+    </a>
+    <div class="misc-info">
+      <div class="title">{{ item['title'] }}</div>
+      <a href="https://www.youtube.com/c/{{ item['channelName'] }}" class="channel">{{ item['channelName'] }}</a>
+      <div class="info" id="views">{{ item['viewCount'] }}</div>
+      <div class="info">•</div>
+      <div class="info" id="date">{{ item['timeDelta'] }}</div>
+    </div>
+    <br>
+  </div>
+  <hr>
+  {% endfor %}
+</div>
+{% endblock %}

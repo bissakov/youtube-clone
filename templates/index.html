@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+  <div class="header-grid">
+    <div class="label">Playlist</div>
+    <div class="sort">
+      <input type="checkbox" id="sort-btn" autocomplete="off" onclick="toggleSortMenu()"></input>
+      <label class="btn" for="sort-btn">SORT BY</label>
+    </div>
+  </div>
+  <div class="sort-menu hidden">
+    <div class="sort-item" id="item1" onclick="location.href = '/views-descending'">Most popular</div>
+    <div class="sort-item" id="item2" onclick="location.href = '/views-ascending'">Least Popular</div>
+    <div class="sort-item" id="item3" onclick="location.href = '/date-descending'">Date added (oldest)</div>
+    <div class="sort-item" id="item4" onclick="location.href = '/date-ascending'">Date added (newest)</div>
+    <div class="sort-item" id="item5" onclick="location.href = '/longest'">Longest</div>
+    <div class="sort-item" id="item6" onclick="location.href = '/shortest'">Shortest</div>
+    <div class="sort-item" id="item7" onclick="location.href = '/ratio-descending'">Highest ratio</div>
+    <div class="sort-item" id="item8" onclick="location.href = '/ratio-ascending'">Lowest ratio</div>
+    <div class="sort-item selected" id="item9" onclick="location.href = '/'">Random</div>
+  </div>
+</div>
+<div class="container" data-total="{{ total }}">
+  {% for item in data %}
+  <div class="item">
+    <a href="https://youtu.be/{{ item['videoId'] }}" class="video">
+      <div class="thumbnail-container">
+        <div class="ratio"><div class="ratio-tooltip" title="{{ item['ratio'] * 100 }}%"></div></div>
+        <div class="duration">{{ item['duration'] }}</div>
+        <img src="static/img/small/{{ item['videoId'] }}.jpg" alt="" class="thumbnail">
+      </div>
+      <div class="title">{{ item['title'] }}</div>
+    </a>
+    <a href="https://www.youtube.com/c/{{ item['channelName'] }}" class="channel">{{ item['channelName'] }}</a>
+    <br>
+    <div class="info" id="views">{{ item['viewCount'] }}</div>
+    <div class="info">•</div>
+    <div class="info" id="date">{{ item['timeDelta'] }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
