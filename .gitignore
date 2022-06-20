@@ -1,0 +1,14 @@
+.env
+*.pyc
+myvenv/
+__pycache__/
+backup1.json
+backup2.json
+playlist_items.json
+videos_dups.json
+fetch_playlist.py
+image.py
+test.py
+1.txt
+output.txt
+total_videos_count.txt
